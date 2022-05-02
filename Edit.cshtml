@@ -1,0 +1,19 @@
+﻿@model Assignment4.Models.Accounts
+
+<h1>Editing Details for Account No. @Model.AccountNumber</h1>
+
+@using (Html.BeginForm("EditAccount", "Home"))
+{
+    @Html.HiddenFor(a => a.AccountNumber)
+
+    <p>
+        Name: @Html.TextBoxFor(a => a.Name)
+    </p>
+
+    <p>
+        Current Balance: @Html.TextBoxFor(a => a.CurrentBalance)
+    </p>
+
+    <input type="submit" value="Save Modifications" />
+}
+

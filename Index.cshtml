@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Assignment4.Models.Accounts>
+
+<h2>
+    Viewing all accounts...
+</h2>
+
+@Html.ActionLink("Create new account", "Create")
+
+@foreach (var a in Model)
+{
+    <p>
+        Account Number: @a.AccountNumber
+    </p>
+    <p>
+        Account Holder's Name: @a.Name
+    </p>
+
+    <p>
+        Current Balance: @a.CurrentBalance.ToString("C")
+    </p>
+    @Html.ActionLink("Edit", "Edit", new { accno = @a.AccountNumber }) <span>&nbsp;</span>
+    @Html.ActionLink("Delete", "Delete", new { accno = @a.AccountNumber })
+    <hr />
+}
+
+@Html.Action("GetNews", new { category = "Sports" })
+@Html.Action("GetNews", new { category = "Weather" })
+@Html.Action("GetNews", new { category = "Stock" })
+
